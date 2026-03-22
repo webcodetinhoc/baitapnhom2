@@ -1,213 +1,146 @@
 <!doctype html>
-<!-- Khai báo đây là tài liệu HTML5 -->
 <html lang="vi">
-  <!-- Ngôn ngữ trang là tiếng Việt -->
-  <head>
-    <meta charset="UTF-8" />
-    <!-- Hỗ trợ hiển thị tiếng Việt (Unicode) -->
-    <title>Giới Thiệu Tác Phẩm Văn Học</title>
-    <!-- Tiêu đề hiển thị trên tab trình duyệt -->
+<head>
+<meta charset="UTF-8" />
+<title>Giới Thiệu Tác Phẩm Văn Học</title>
 
-    <style>
-      /* =========================
-         PHẦN CSS - TRANG TRÍ GIAO DIỆN
-         ========================= */
+<style>
+body {
+  font-family: "Times New Roman";
+  background: #fdf6e3;
+  margin: 0;
+}
 
-      body {
-        font-family: "Times New Roman"; /* Font chữ toàn trang */
-        background: #fdf6e3; /* Màu nền (vàng nhạt cổ điển) */
-        margin: 0; /* Xóa khoảng trắng mặc định của trình duyệt */
-      }
+html {
+  scroll-behavior: smooth;
+}
 
-      header {
-        background: #e6c97a; /* Màu nền phần tiêu đề */
-        color: #4a2c00; /* Màu chữ */
-        text-align: center; /* Căn giữa nội dung */
-        padding: 25px; /* Khoảng cách bên trong */
-        border-bottom: 4px solid #c9a74e; /* Đường viền dưới tạo điểm nhấn */
-      }
+header {
+  background: #e6c97a;
+  color: #4a2c00;
+  text-align: center;
+  padding: 25px;
+  border-bottom: 4px solid #c9a74e;
+}
 
-      nav {
-        background: #f3d98b; /* Màu nền thanh menu */
-        text-align: center; /* Căn giữa các mục menu */
-        padding: 12px; /* Khoảng cách bên trong */
-      }
+nav {
+  background: #f3d98b;
+  text-align: center;
+  padding: 12px;
 
-      nav a {
-        color: #4a2c00; /* Màu chữ link */
-        margin: 0 15px; /* Khoảng cách giữa các link */
-        text-decoration: none; /* Bỏ gạch chân mặc định */
-        font-weight: bold; /* In đậm */
-      }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-      nav a:hover {
-        text-decoration: underline; /* Khi rê chuột vào sẽ gạch chân */
-      }
+nav a {
+  color: #4a2c00;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-      .container {
-        padding: 30px; /* Khoảng cách bên trong */
-        max-width: 900px; /* Giới hạn chiều rộng */
-        margin: auto; /* Căn giữa trang */
-      }
+nav a:hover {
+  text-decoration: underline;
+}
 
-      .article {
-        background: #fffaf0; /* Nền từng bài viết */
-        padding: 20px; /* Khoảng cách bên trong */
-        margin-bottom: 25px; /* Khoảng cách giữa các bài */
-        border-radius: 10px; /* Bo góc */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tạo bóng */
-      }
+.container {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
 
-      img {
-        max-width: 100%; /* Ảnh không vượt quá khung */
-        border-radius: 6px; /* Bo góc ảnh */
-        margin-top: 10px; /* Khoảng cách phía trên */
-      }
+.article {
+  background: #fffaf0;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-      .button {
-        display: inline-block; /* Hiển thị dạng nút */
-        margin-top: 10px; /* Khoảng cách trên */
-        padding: 8px 15px; /* Khoảng cách trong nút */
-        background: #e6c97a; /* Màu nền nút */
-        color: #4a2c00; /* Màu chữ */
-        text-decoration: none; /* Bỏ gạch chân */
-        border-radius: 6px; /* Bo góc */
-        font-weight: bold; /* In đậm */
-      }
+img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+}
 
-      .button:hover {
-        background: #d4b45f; /* Đổi màu khi hover */
-      }
+.button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #e6c97a;
+  color: #4a2c00;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
 
-      footer {
-        background: #e6c97a; /* Màu nền footer */
-        color: #4a2c00; /* Màu chữ */
-        text-align: center; /* Căn giữa */
-        padding: 15px; /* Khoảng cách trong */
-      }
-    </style>
-  </head>
+.button:hover {
+  background: #d4b45f;
+}
 
-  <body>
-    <!-- =========================
-         HEADER - PHẦN ĐẦU TRANG
-         ========================= -->
-    <header>
-      <h1>📚 GIỚI THIỆU TÁC PHẨM VĂN HỌC</h1>
-      <!-- Tiêu đề chính -->
-      <p>Khám phá những tác phẩm nổi bật của văn học Việt Nam</p>
-      <!-- Mô tả -->
-    </header>
+footer {
+  background: #e6c97a;
+  color: #4a2c00;
+  text-align: center;
+  padding: 15px;
+}
+</style>
+</head>
 
-    <!-- =========================
-         MENU ĐIỀU HƯỚNG
-         ========================= -->
-    <nav>
-      <a href="#">Trang chủ</a>
-      <!-- Link trang chủ -->
-      <a href="#">Tác giả</a>
-      <!-- Link tác giả -->
-      <a href="#">Tác phẩm</a>
-      <!-- Link tác phẩm -->
-      <a href="#">Liên hệ</a>
-      <!-- Link liên hệ -->
-    </nav>
+<body>
 
-    <!-- =========================
-         NỘI DUNG CHÍNH
-         ========================= -->
-    <div class="container">
-      <!-- ===== BÀI 1 ===== -->
-      <div class="article">
-        <h2>Lão Hạc</h2>
-        <!-- Tên tác phẩm -->
-        <p><b>Tác giả:</b> Nam Cao</p>
-        <!-- Tác giả -->
+<header>
+<h1>📚 GIỚI THIỆU TÁC PHẨM VĂN HỌC</h1>
+<p>Khám phá những tác phẩm nổi bật của văn học Việt Nam</p>
+</header>
 
-        <img
-          src="https://vanhoctre.com/wp-content/uploads/2019/01/l%C3%A3o-h%E1%BA%A1c-780x405.jpg"
-        />
-        <!-- Ảnh minh họa -->
+<nav>
+<a href="#hienthuc">Hiện thực</a>
+<a href="#tinhcam">Tình cảm gia đình</a>
+<a href="#chientranh">Chiến tranh</a>
+<a href="#codien">Văn học cổ điển</a>
+</nav>
 
-        <p>
-          <!-- Nội dung tóm tắt -->
-          Truyện kể về lão Hạc, một người nông dân nghèo sống cô đơn...
-        </p>
+<div class="container">
 
-        <a
-          class="button"
-          href="https://vi.wikipedia.org/wiki/L%C3%A3o_H%E1%BA%A1c"
-          target="_blank"
-        >
-          Đọc thêm trên Wikipedia
-          <!-- Nút dẫn link -->
-        </a>
-      </div>
+<div class="article" id="hienthuc">
+<h2>Lão Hạc</h2>
+<p><b>Tác giả:</b> Nam Cao</p>
+<img src="https://vanhoctre.com/wp-content/uploads/2019/01/l%C3%A3o-h%E1%BA%A1c-780x405.jpg">
+<p>Truyện kể về lão Hạc, một người nông dân nghèo sống cô đơn...</p>
+<a class="button" href="https://vi.wikipedia.org/wiki/L%C3%A3o_H%E1%BA%A1c" target="_blank">Đọc thêm</a>
+</div>
 
-      <!-- ===== BÀI 2 ===== -->
-      <div class="article">
-        <h2>Làng</h2>
-        <p><b>Tác giả:</b> Kim Lân</p>
+<div class="article" id="tinhcam">
+<h2>Làng</h2>
+<p><b>Tác giả:</b> Kim Lân</p>
+<img src="https://i.ytimg.com/vi/8F4zIjmfVbc/hq720.jpg">
+<p>Truyện kể về ông Hai, một người nông dân rất yêu làng...</p>
+<a class="button" href="https://vi.wikipedia.org/wiki/L%C3%A0ng_(truy%E1%BB%87n_ng%E1%BA%AFn)" target="_blank">Đọc thêm</a>
+</div>
 
-        <img src="https://i.ytimg.com/vi/8F4zIjmfVbc/hq720.jpg" />
+<div class="article" id="chientranh">
+<h2>Chiếc lược ngà</h2>
+<p><b>Tác giả:</b> Nguyễn Quang Sáng</p>
+<img src="https://book.sachgiai.com/uploads/book/chiec-luoc-nga/chiec-luoc-nga.jpg">
+<p>Truyện kể về tình cha con giữa ông Sáu và bé Thu...</p>
+<a class="button" href="https://vi.wikipedia.org/wiki/Chi%E1%BA%BFc_l%C6%B0%E1%BB%A3c_ng%C3%A0" target="_blank">Đọc thêm</a>
+</div>
 
-        <p>Truyện kể về ông Hai, một người nông dân rất yêu làng...</p>
+<div class="article" id="codien">
+<h2>Truyện Kiều</h2>
+<p><b>Tác giả:</b> Nguyễn Du</p>
+<img src="https://khangvietbook.com.vn/upload/product/412328372516.jpg">
+<p>Truyện Kiều kể về cuộc đời nhiều bất hạnh của Thúy Kiều...</p>
+<a class="button" href="https://vi.wikipedia.org/wiki/Truy%E1%BB%87n_Ki%E1%BB%81u" target="_blank">Đọc thêm</a>
+</div>
 
-        <a
-          class="button"
-          href="https://vi.wikipedia.org/wiki/L%C3%A0ng_(truy%E1%BB%87n_ng%E1%BA%AFn)"
-          target="_blank"
-        >
-          Đọc thêm trên Wikipedia
-        </a>
-      </div>
+</div>
 
-      <!-- ===== BÀI 3 ===== -->
-      <div class="article">
-        <h2>Chiếc lược ngà</h2>
-        <p><b>Tác giả:</b> Nguyễn Quang Sáng</p>
+<footer>
+<p>© 2026 Trang web giới thiệu tác phẩm văn học</p>
+</footer>
 
-        <img
-          src="https://book.sachgiai.com/uploads/book/chiec-luoc-nga/chiec-luoc-nga.jpg"
-        />
-
-        <p>Truyện kể về tình cha con giữa ông Sáu và bé Thu...</p>
-
-        <a
-          class="button"
-          href="https://vi.wikipedia.org/wiki/Chi%E1%BA%BFc_l%C6%B0%E1%BB%A3c_ng%C3%A0"
-          target="_blank"
-        >
-          Đọc thêm trên Wikipedia
-        </a>
-      </div>
-
-      <!-- ===== BÀI 4 ===== -->
-      <div class="article">
-        <h2>Truyện Kiều</h2>
-        <p><b>Tác giả:</b> Nguyễn Du</p>
-
-        <img
-          src="https://khangvietbook.com.vn/upload/product/412328372516.jpg"
-        />
-
-        <p>Truyện Kiều kể về cuộc đời nhiều bất hạnh của Thúy Kiều...</p>
-
-        <a
-          class="button"
-          href="https://vi.wikipedia.org/wiki/Truy%E1%BB%87n_Ki%E1%BB%81u"
-          target="_blank"
-        >
-          Đọc thêm trên Wikipedia
-        </a>
-      </div>
-    </div>
-
-    <!-- =========================
-         FOOTER - CHÂN TRANG
-         ========================= -->
-    <footer>
-      <p>© 2026 Trang web giới thiệu tác phẩm văn học</p>
-    </footer>
-  </body>
+</body>
 </html>
