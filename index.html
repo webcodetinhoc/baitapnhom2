@@ -2,152 +2,292 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8" />
-<title>Giới Thiệu Tác Phẩm Văn Học</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giới Thiệu Tác Phẩm Văn Học Việt Nam</title>
 
 <style>
-body {
-  font-family: "Times New Roman";
-  background: #fdf6e3;
-  color:#1b5e20
-;
-  margin: 0;
-}
-h1, h2,h3,h4 {
-  color: #0d47a1
-;
-}
+  /* --- Khai báo biến màu sắc --- */
+  :root {
+    --primary-color: #0d47a1;
+    --accent-color: #e6c97a;
+    --accent-hover: #d4b45f;
+    --text-color: #1b5e20;
+    --bg-color: #fdf6e3;
+    --card-bg: #fffaf0;
+    --youtube-red: #FF0000; /* Màu đỏ cho nút video */
+    --header-grad-start: #e6c97a;
+    --header-grad-end: #c9a74e;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+  }
 
-header {
-  background: #e6c97a;
-  color: #4a2c00;
-  text-align: center;
-  padding: 25px;
-  border-bottom: 4px solid #c9a74e;
-}
+  html { scroll-behavior: smooth; }
 
-nav {
-  background: #f3d98b;
-  text-align: center;
-  padding: 12px;
+  header {
+    background: linear-gradient(135deg, var(--header-grad-start) 0%, var(--header-grad-end) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 5px solid #b3913e;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
 
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+  header h1 {
+    color: #fff;
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
 
-nav a {
-  color: #4a2c00;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
+  nav {
+    background-color: #f3d98b;
+    text-align: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
 
-nav a:hover {
-  text-decoration: underline;
-}
+  nav a {
+    color: #4a2c00;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
 
-.container {
-  padding: 30px;
-  max-width: 900px;
-  margin: auto;
-}
+  .container {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
 
-.article {
-  background: #fffaf0;
-  padding: 20px;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+  .article {
+    background-color: var(--card-bg);
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
 
-img {
-  max-width: 100%;
-  border-radius: 6px;
-  margin-top: 10px;
-}
+  .article h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+  }
 
-.button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background: #e6c97a;
-  color: #4a2c00;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-}
+  .article figure {
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
 
-.button:hover {
-  background: #d4b45f;
-}
+  .article img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
 
-footer {
-  background: #e6c97a;
-  color: #4a2c00;
-  text-align: center;
-  padding: 15px;
-}
+  /* --- Định dạng Nút --- */
+  .button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  /* Nút đọc thêm màu vàng */
+  .btn-info {
+    background-color: var(--accent-color);
+    color: #4a2c00;
+  }
+  .btn-info:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+
+  /* Nút Video màu đỏ (Thay thế mã nhúng) */
+  .btn-video {
+    background-color: var(--youtube-red);
+    color: #ffffff;
+  }
+  .btn-video:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+  }
+
+  /* --- Biểu mẫu --- */
+  .feedback-section {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    margin-top: 50px;
+  }
+
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-weight: bold; margin-bottom: 8px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px; border: 2px solid #e0e0e0; border-radius: 8px; box-sizing: border-box;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1em;
+  }
+
+  footer {
+    background: linear-gradient(135deg, var(--header-grad-end) 0%, var(--header-grad-start) 100%);
+    color: #4a2c00;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 2em; }
+    nav a { margin: 0 5px; font-size: 0.9em; }
+  }
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>📚 GIỚI THIỆU TÁC PHẨM VĂN HỌC</h1>
-<p>Khám phá những tác phẩm nổi bật của văn học Việt Nam</p>
+  <h1>📚 GIỚI THIỆU TÁC PHẨM VĂN HỌC</h1>
+  <p>Khám phá những tác phẩm nổi bật của văn học Việt Nam</p>
 </header>
 
 <nav>
-<a href="#hienthuc">Hiện thực</a>
-<a href="#tinhcam">Tình cảm gia đình</a>
-<a href="#chientranh">Chiến tranh</a>
-<a href="#codien">Văn học cổ điển</a>
+  <a href="#hienthuc">Hiện thực</a>
+  <a href="#tinhcam">Tình cảm gia đình</a>
+  <a href="#chientranh">Chiến tranh</a>
+  <a href="#codien">Văn học cổ điển</a>
+  <a href="#gopy">Góp ý</a>
 </nav>
 
-<div class="container">
+<main class="container">
 
-<div class="article" id="hienthuc">
-<h2>Lão Hạc</h2>
-<p><b>Tác giả:</b> Nam Cao</p>
-<img src="https://vanhoctre.com/wp-content/uploads/2019/01/l%C3%A3o-h%E1%BA%A1c-780x405.jpg">
-<p>Truyện kể về lão Hạc, một người nông dân nghèo sống cô đơn sau khi vợ mất, con trai đi làm đồn điền cao su. Lão rất thương con nên cố giữ lại mảnh vườn cho con. Vì quá nghèo, lão buộc phải bán con chó Vàng – kỷ vật của con trai, khiến lão vô cùng đau khổ và dằn vặt. Cuối cùng, để không tiêu vào tiền dành cho con, lão Hạc đã chọn cái chết bằng bả chó. 👉 Câu chuyện thể hiện cuộc sống khốn khổ của người nông dân trước Cách mạng và phẩm chất lương thiện, lòng thương con sâu sắc của lão Hạc.</p>
-<a class="button" href="https://vi.wikipedia.org/wiki/L%C3%A3o_H%E1%BA%A1c" target="_blank">Đọc thêm</a>
-</div>
+  <section class="article" id="hienthuc">
+    <article>
+      <h2>Lão Hạc</h2>
+      <p><b>Tác giả:</b> Nam Cao</p>
+      <figure>
+        <img src="https://vanhoctre.com/wp-content/uploads/2019/01/l%C3%A3o-h%E1%BA%A1c-780x405.jpg" alt="Minh họa tác phẩm Lão Hạc">
+      </figure>
+      <p>Truyện kể về lão Hạc, một người nông dân nghèo sống cô đơn sau khi vợ mất, con trai đi làm đồn điền cao su. Lão rất thương con nên cố giữ lại mảnh vườn cho con. Cuối cùng, để không tiêu vào tiền dành cho con, lão Hạc đã chọn cái chết bằng bả chó.</p>
+      
+      <div class="button-group">
+        <a class="button btn-info" href="https://vi.wikipedia.org/wiki/L%C3%A3o_H%E1%BA%A1c" target="_blank">📖 Đọc thêm về tác phẩm</a>
+        <a class="button btn-video" href="https://youtu.be/3BSH9Zkg5D0" target="_blank">🎬 Xem video tóm tắt / Phim</a>
+      </div>
+    </article>
+  </section>
 
-<div class="article" id="tinhcam">
-<h2>Làng</h2>
-<p><b>Tác giả:</b> Kim Lân</p>
-<img src="https://i.ytimg.com/vi/8F4zIjmfVbc/hq720.jpg">
-<p>Truyện kể về ông Hai, một người nông dân rất yêu làng Chợ Dầu. Khi đi tản cư, ông luôn tự hào kể về làng mình. Khi nghe tin làng theo giặc, ông vô cùng đau khổ và xấu hổ. Sau đó, ông biết tin đó là sai, làng vẫn kháng chiến nên ông rất vui mừng và tự hào. 👉 Tác phẩm thể hiện tình yêu làng gắn liền với lòng yêu nước của người nông dân trong thời kỳ kháng chiến chống Pháp.</p>
-<a class="button" href="https://vi.wikipedia.org/wiki/L%C3%A0ng_(truy%E1%BB%87n_ng%E1%BA%AFn)" target="_blank">Đọc thêm</a>
-</div>
+  <section class="article" id="tinhcam">
+    <article>
+      <h2>Làng</h2>
+      <p><b>Tác giả:</b> Kim Lân</p>
+      <figure>
+        <img src="https://i.ytimg.com/vi/8F4zIjmfVbc/hq720.jpg" alt="Minh họa tác phẩm Làng">
+      </figure>
+      <p>Tác phẩm thể hiện tình yêu làng gắn liền với lòng yêu nước của người nông dân trong thời kỳ kháng chiến chống Pháp thông qua nhân vật ông Hai.</p>
+      
+      <div class="button-group">
+        <a class="button btn-info" href="https://vi.wikipedia.org/wiki/L%C3%A0ng_(truy%E1%BB%87n_ng%E1%BA%AFn)" target="_blank">📖 Đọc thêm về tác phẩm</a>
+        <a class="button btn-video" href="https://youtu.be/8F4zIjmfVbc" target="_blank">🎬 Xem bài giảng Video</a>
+      </div>
+    </article>
+  </section>
 
-<div class="article" id="chientranh">
-<h2>Chiếc lược ngà</h2>
-<p><b>Tác giả:</b> Nguyễn Quang Sáng</p>
-<img src="https://book.sachgiai.com/uploads/book/chiec-luoc-nga/chiec-luoc-nga.jpg">
-<p>Truyện kể về tình cha con giữa ông Sáu và bé Thu trong thời chiến. Sau nhiều năm xa nhà, ông Sáu về thăm nhưng bé Thu không nhận ra cha nên tỏ ra lạnh nhạt. Đến lúc Thu nhận ra và gọi “ba” thì ông Sáu phải lên đường. Ở chiến khu, ông Sáu làm chiếc lược ngà tặng con nhưng chưa kịp trao thì hy sinh. 👉 Câu chuyện thể hiện tình cha con sâu nặng và cảm động trong hoàn cảnh chiến tranh.
+  <section class="article" id="chientranh">
+    <article>
+      <h2>Chiếc lược ngà</h2>
+      <p><b>Tác giả:</b> Nguyễn Quang Sáng</p>
+      <figure>
+        <img src="https://book.sachgiai.com/uploads/book/chiec-luoc-nga/chiec-luoc-nga.jpg" alt="Minh họa tác phẩm Chiếc lược ngà">
+      </figure>
+      <p>Câu chuyện thể hiện tình cha con sâu nặng và cảm động giữa ông Sáu và bé Thu trong hoàn cảnh éo le của chiến tranh.</p>
+      
+      <div class="button-group">
+        <a class="button btn-info" href="https://vi.wikipedia.org/wiki/Chi%E1%BA%BFc_l%C6%B0%E1%BB%A3c_ng%C3%A0" target="_blank">📖 Đọc thêm về tác phẩm</a>
+       <a class="button btn-video" href="https://youtu.be/86gMh5mMFAs" target="_blank">🎬 Xem trích đoạn phim</a>
+      </div>
+    </article>
+  </section>
 
-</p>
-<a class="button" href="https://vi.wikipedia.org/wiki/Chi%E1%BA%BFc_l%C6%B0%E1%BB%A3c_ng%C3%A0" target="_blank">Đọc thêm</a>
-</div>
+  <section class="article" id="codien">
+    <article>
+      <h2>Truyện Kiều</h2>
+      <p><b>Tác giả:</b> Nguyễn Du</p>
+      <figure>
+        <img src="https://khangvietbook.com.vn/upload/product/412328372516.jpg" alt="Minh họa Truyện Kiều">
+      </figure>
+      <p>Tác phẩm phản ánh số phận đau khổ của con người trong xã hội phong kiến và ca ngợi vẻ đẹp, tài năng, lòng hiếu thảo của Thúy Kiều.</p>
+      
+      <div class="button-group">
+        <a class="button btn-info" href="https://vi.wikipedia.org/wiki/Truy%E1%BB%87n_Ki%E1%BB%81u" target="_blank">📖 Đọc thêm về tác phẩm</a>
+        <a class="button btn-video" href="https://youtu.be/ETwPIBxw4mo" target="_blank">🎬 Xem tóm tắt bằng tranh</a>
+      </div>
+    </article>
+  </section>
 
-<div class="article" id="codien">
-<h2>Truyện Kiều</h2>
-<p><b>Tác giả:</b> Nguyễn Du</p>
-<img src="https://khangvietbook.com.vn/upload/product/412328372516.jpg">
-<p>Truyện Kiều kể về cuộc đời nhiều bất hạnh của Thúy Kiều. Vì cứu cha và em trai, Kiều phải bán mình cho Mã Giám Sinh, từ đó rơi vào nhiều đau khổ và lưu lạc suốt 15 năm. Cuối cùng, sau nhiều biến cố, Kiều được đoàn tụ với gia đình và gặp lại Kim Trọng. 👉 Tác phẩm phản ánh số phận đau khổ của con người trong xã hội phong kiến và ca ngợi vẻ đẹp, tài năng, lòng hiếu thảo của Thúy Kiều.</p>
-<a class="button" href="https://vi.wikipedia.org/wiki/Truy%E1%BB%87n_Ki%E1%BB%81u" target="_blank">Đọc thêm</a>
-</div>
+  <section id="gopy" class="feedback-section">
+    <h2>✍️ Đóng Góp Ý Kiến Cho Trang Web</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label for="name">Họ và tên của bạn:</label>
+        <input type="text" id="name" name="name" placeholder="Ví dụ: Nguyễn Văn A" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Địa chỉ Email:</label>
+        <input type="email" id="email" name="email" placeholder="Ví dụ: hoa@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="favorite">Tác phẩm bạn yêu thích nhất:</label>
+        <select id="favorite" name="favorite">
+          <option value="laohac">Lão Hạc</option>
+          <option value="lang">Làng</option>
+          <option value="chiecluocnga">Chiếc lược ngà</option>
+          <option value="truyenkieu">Truyện Kiều</option>
+          <option value="other">Tác phẩm khác</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Lời nhắn/Góp ý của bạn:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Nhập ý kiến của bạn tại đây..." required></textarea>
+      </div>
+      <button type="submit" class="button btn-submit">Gửi ý kiến đóng góp</button>
+    </form>
+  </section>
 
-</div>
+</main>
 
 <footer>
-<p>© 2026 Trang web giới thiệu tác phẩm văn học</p>
+  <p><b>© 2026 Trang web giới thiệu tác phẩm văn học</b></p>
+  <p>Thiết kế bởi: Nhóm [Tên Nhóm Của Bạn] - Lớp [Tên Lớp]</p>
 </footer>
 
 </body>
